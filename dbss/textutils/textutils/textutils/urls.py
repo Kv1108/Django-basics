@@ -18,8 +18,21 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+'''
+#url navigator
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name='index'),
     path('about', views.about, name='about'),
+]
+'''
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.index, name='index'),
+    path('removepunc',views.removepunc, name='rempun'),
+    path('capitalizefirst',views.capfirst, name='capfirst'),
+    path('newlineremove',views.newlineremove, name='newlineremove'),
+    path('spaceremov',views.spaceremov, name='spaceremov'),
+    path('charcount',views.charcount, name='charcount'),
 ]
