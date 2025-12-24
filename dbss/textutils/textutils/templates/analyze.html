@@ -3,14 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyzing Text...</title>
+    <title>Results | TextUtils</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 800px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .purpose-badge {
+            background-color: #e7f1ff;
+            color: #0d6efd;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .result-box {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            white-space: pre-wrap; /* Preserves formatting and line breaks */
+            word-wrap: break-word;
+            min-height: 150px;
+        }
+    </style>
 </head>
 <body>
-    <h1>
-        Your analyzed text - {{purpose}}
-    </h1>
-    <p>
-        {{analyzed_text}}
-    </p>
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">TextUtils</span>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="m-0">Analysis Result</h2>
+            <span class="purpose-badge">{{purpose}}</span>
+        </div>
+        
+        <div class="mb-4">
+            <label class="form-label text-muted">Your Processed Text:</label>
+            <div class="result-box">{{analyzed_text}}
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="/" class="btn btn-outline-secondary px-4">Analyze More Text</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
