@@ -18,13 +18,27 @@ def index(request):
     return render(request, 'index.html')
     #return HttpResponse("Home")
 
-def removepunc(request):
+def analyze(request):
     #get the text
     djtext = request.GET.get('text', 'default')
+    removepunc = request.GET.get('removepunc', 'off')
+    print(removepunc)
     print(djtext)
+    if removepunc == "on":
+        #analyzed = djtext
+        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        analyzed = ""
+        for char in djtext:
+            if char not in punctuations:
+                analyzed = analyzed + char
+        params = {'purpose':'remove punctuations', 'analyzed_text':analyzed}
     #analyze the text
-    return HttpResponse("Remove Punct <a href='/'> Back </a>")
- 
+    #return HttpResponse("Remove Punct <a href='/'> Back </a>")
+        return render(request, 'analyze.html', params)
+    else:
+        return HttpResponse("Error")
+
+'''
 def capfirst(request):
     return HttpResponse("Capitalize First <a href='/'> Back </a>")
 
@@ -36,3 +50,4 @@ def spaceremov(request):
 
 def charcount(request):
     return HttpResponse("Character Count <a href='/'> Back </a>")
+''' 

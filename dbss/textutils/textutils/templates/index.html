@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template is working</title>
+    <title>Text Utils</title>
 </head>
 <body>
     <h1>
         Welcome to the text analyzer.
         Enter your text:
     </h1>
-    <form action='/removepunc' method='get'>
-        <textarea name='text' style='margin: 0px; width: 1481px; height: 68px;'>
-        </textarea>
+    <form action='/analyze' method='get'>
+        <textarea name='text' style='margin: 0px; width: 1481px; height: 68px;'></textarea>
+        <br>
+        <input type="checkbox" name="removepunc">Remove Punctuations
+        <br>
         <button type = 'submit'> Analyze Text </button>
     </form>
 </body>

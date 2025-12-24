@@ -25,8 +25,8 @@ urlpatterns = [
     path('',views.index, name='index'),
     path('about', views.about, name='about'),
 ]
-'''
 
+# pipeline structure
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index, name='index'),
@@ -35,4 +35,11 @@ urlpatterns = [
     path('newlineremove',views.newlineremove, name='newlineremove'),
     path('spaceremov',views.spaceremov, name='spaceremov'),
     path('charcount',views.charcount, name='charcount'),
+]
+'''
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.index, name='index'),
+    path('analyze',views.analyze, name='analyze'),
 ]
