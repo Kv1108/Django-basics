@@ -1,6 +1,7 @@
 # created
 
 from django.http import HttpResponse
+from django.shortcuts import render
 
 '''
 # website navigator
@@ -14,19 +15,21 @@ def about(request):
 '''
 
 def index(request):
-    return HttpResponse("Home")
+    params = {'name':'Krishna', 'place':'Earth'}
+    return render(request, 'index.html', params)
+    #return HttpResponse("Home")
 
 def removepunc(request):
-    return HttpResponse("Remove Punct")
+    return HttpResponse("Remove Punct <a href='/'> Back </a>")
 
 def capfirst(request):
-    return HttpResponse("Capitalize First")
+    return HttpResponse("Capitalize First <a href='/'> Back </a>")
 
 def newlineremove(request):
-    return HttpResponse("New Line Remove")
+    return HttpResponse("New Line Remove <a href='/'> Back </a>")
 
 def spaceremov(request):
-    return HttpResponse("Space Remove")
+    return HttpResponse("Space Remove <a href='/'> Back </a>")
 
 def charcount(request):
-    return HttpResponse("Character Count")
+    return HttpResponse("Character Count <a href='/'> Back </a>")
