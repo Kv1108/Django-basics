@@ -37,14 +37,14 @@ def analyze(request):
         params = {'purpose':'remove punctuations', 'analyzed_text':analyzed}
         return render(request, 'analyze.html', params)
     
-    elif fullcaps == "on":
+    if fullcaps == "on":
         analyzed = ""
         for char in djtext:
             analyzed = analyzed + char.upper()
         params = {'purpose':'changed to Upper Case', 'analyzed_text':analyzed}
         return render(request, 'analyze.html', params)
     
-    elif newlineremove == "on":
+    if newlineremove == "on":
         analyzed = ""
         for char in djtext:
             if char != "\n" and char!="\r":
