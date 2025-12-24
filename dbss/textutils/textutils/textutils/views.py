@@ -18,23 +18,40 @@ def index(request):
     return render(request, 'index.html')
     #return HttpResponse("Home")
 
-def analyze(request):
-    #get the text
+def analyze(request):   
+    # get the text
     djtext = request.GET.get('text', 'default')
+
+    # check checkbox values
     removepunc = request.GET.get('removepunc', 'off')
-    print(removepunc)
-    print(djtext)
+    fullcaps = request.GET.get('fullcaps', 'off')
+    newlineremove = request.GET.get('newlineremove', 'off')
+
+    # check which checkbox is on
     if removepunc == "on":
-        #analyzed = djtext
         punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         analyzed = ""
         for char in djtext:
             if char not in punctuations:
                 analyzed = analyzed + char
         params = {'purpose':'remove punctuations', 'analyzed_text':analyzed}
-    #analyze the text
-    #return HttpResponse("Remove Punct <a href='/'> Back </a>")
         return render(request, 'analyze.html', params)
+    
+    elif fullcaps == "on":
+        analyzed = ""
+        for char in djtext:
+            analyzed = analyzed + char.upper()
+        params = {'purpose':'changed to Upper Case', 'analyzed_text':analyzed}
+        return render(request, 'analyze.html', params)
+    
+    elif newlineremove == "on":
+        analyzed = ""
+        for char in djtext:
+            if char != "\n" and char!="\r":
+                analyzed = analyzed + char
+        params = {'purpose':'New Line Removed', 'analyzed_text':analyzed}
+        return render(request, 'analyze.html', params)
+    
     else:
         return HttpResponse("Error")
 
