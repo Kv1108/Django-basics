@@ -15,13 +15,16 @@ def about(request):
 '''
 
 def index(request):
-    params = {'name':'Krishna', 'place':'Earth'}
-    return render(request, 'index.html', params)
+    return render(request, 'index.html')
     #return HttpResponse("Home")
 
 def removepunc(request):
+    #get the text
+    djtext = request.GET.get('text', 'default')
+    print(djtext)
+    #analyze the text
     return HttpResponse("Remove Punct <a href='/'> Back </a>")
-
+ 
 def capfirst(request):
     return HttpResponse("Capitalize First <a href='/'> Back </a>")
 

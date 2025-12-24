@@ -6,7 +6,14 @@
     <title>Template is working</title>
 </head>
 <body>
-    It's template
-    {{name}} is from {{place}}
+    <h1>
+        Welcome to the text analyzer.
+        Enter your text:
+    </h1>
+    <form action='/removepunc' method='get'>
+        <textarea name='text' style='margin: 0px; width: 1481px; height: 68px;'>
+        </textarea>
+        <button type = 'submit'> Analyze Text </button>
+    </form>
 </body>
 </html>
