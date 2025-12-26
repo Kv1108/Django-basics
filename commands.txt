@@ -1,0 +1,17 @@
+1. For running development server: 
+    python manage.py runserver
+
+2. For creating a New App:
+    python manage.py starapp <app_name>
+
+3. For creating the super user:
+    python manage.py createsuperuser
+
+4. For changing the password:
+    python manage.py changepassword <your_user_name>
+
+5. For creating the Tables:
+    python manage.py makemigrations
+    python manage.py migrate
+
+
