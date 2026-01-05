@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <!-- {% with firstname = 'abc' %}
-    <h1>Hello {{firstname}}, how are you?</h1>>
-    {% endwith %}
-    <ul>
-        {% for x in mymembers %}
-        <li>{{ x.firstname }}</li>
-        {% endfor %}
-    </ul> -->
 
-    {% if greeting == 1 %}
-    <h1>Hello</h1>
-    {% else %}
-    <h1>Bye</h1>
-    {% endif %}
+<ul>
+  {% for x in fruits %}
+    <li>{{ forloop.revcounter }}</li>
+  {% endfor %}
+</ul> {# this is small comment}
+{% comment "this is comment description %}
+<p>In views.py you can see what the fruits object looks like.</p>
+{% endcomment %}
 </body>
-</html>
+</html>  
